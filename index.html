@@ -34,7 +34,6 @@
       }
 
       #navbar {
-        background-color: green;
       }
 
       p.lead + p {
@@ -45,12 +44,26 @@
         background-color: blueviolet;
       }
 
+      #navbar a:nth-child(even) {
+        background-color: thistle;
+      }
       .p-6 a:link {
         background-color: blue;
       }
 
       .blog-post2 {
         background-color: red;
+      }
+
+      .blog-post1 {
+        background-color: yellowgreen;
+      }
+
+      footer a[href^="#"] {
+        background-color: yellowgreen;
+      }
+      footer {
+        background-color: thistle;
       }
     </style>
     <meta charset="utf-8" />
@@ -108,7 +121,7 @@
           <div class="col-4 pt-1">
             <a class="text-muted" href="#">Subscribe</a>
           </div>
-          <div class="col-4 text-center" id="title">
+          <div id="title" class="col-4 text-center">
             <a class="blog-header-logo text-dark" href="#">Large</a>
           </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
@@ -467,18 +480,40 @@
 
     <script>
       /*
-         JS Exercises
-         EX11) Write a function to add a new link into the navbar
-         EX12) Write a function to remove the "Search" magnifying glass icon
-         EX13) Write a function to change the background of the jumbotron
-         EX14) Write a function to change the color of the main title
-         EX15) Write a function to change the column size for post headings
-         EX16) Write a function to remove all the links under "Elsewhere"
-         EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post
-         EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
-         EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
-         EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
-     */
+                   JS Exercises
+                   EX11) Write a function to add a new link into the navbar
+                   EX12) Write a function to remove the "Search" magnifying glass icon
+                   EX13) Write a function to change the background of the jumbotron
+                   EX14) Write a function to change the color of the main title
+                   EX15) Write a function to change the column size for post headings
+                   EX16) Write a function to remove all the links under "Elsewhere"
+                   EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post
+                   EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
+                   EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
+                   EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
+               */
+
+      function removeSearch() {
+        const search = document.querySelector("a svg");
+        search.remove();
+      }
+
+      function jumbotronBackgroundColor() {
+        let jumbo = document.querySelector(".jumbotron");
+        jumbo.style.jumbotronBackgroundColor = "red";
+      }
+
+      function changeColor() {
+        let title = document.getElementById("title");
+        title.changeColor = "blue";
+      }
+
+      function removeLinks() {
+        let links = document.querySelector("div.p-5");
+        for (let i = 0; i < links.length; i++) {
+          links[i].remove();
+        }
+      }
     </script>
   </body>
 </html>
